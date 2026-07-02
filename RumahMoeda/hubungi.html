@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami - RumahMoeda</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/hubungi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="assets/logo.png" alt="Logo"></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="hubungi.html" class="active">Hubungi Kami</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <button id="darkmode-toggle"><i class="fas fa-moon"></i></button>
+            <a href="login.html" class="user-icon"><i class="fas fa-user"></i></a>
+        </div>
+    </header>
+
+    <main class="contact-container">
+        <h2>Hubungi Kami</h2>
+        <p>Punya pertanyaan atau ingin bekerja sama? Kirimkan pesanmu di bawah ini.</p>
+        
+        <form id="contactForm" class="contact-form">
+            <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" required placeholder="Masukkan nama Anda">
+            </div>
+            <div class="form-group">
+                <label for="telepon">No. Telepon</label>
+                <input type="tel" id="telepon" required placeholder="Contoh: 0812345678">
+            </div>
+            <div class="form-group">
+                <label for="email">Alamat Email</label>
+                <input type="email" id="email" required placeholder="contoh@email.com">
+            </div>
+            <div class="form-group">
+                <label for="pesan">Isi Pesan</label>
+                <textarea id="pesan" rows="5" required placeholder="Tuliskan pesan Anda di sini..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Kirim Pesan</button>
+        </form>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="js/darkmode.js"></script>
+</body>
+</html>

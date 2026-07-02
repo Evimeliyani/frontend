@@ -1,0 +1,240 @@
+/* Styling Utama Halaman Split Screen (Jendela) */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a1a1a; /* Background dasar gelap agar jendela pop-out */
+    padding: 20px;
+}
+
+/* Tombol Back Melayang */
+.floating-back {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+}
+.floating-back:hover {
+    background: var(--primary-color);
+    color: #1a1a1a;
+}
+
+/* Container Utama Jendela */
+.window-container {
+    display: flex;
+    width: 100%;
+    max-width: 950px;
+    height: 600px;
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* ================= SISI KIRI (FOTO & KATA) ================= */
+.window-left {
+    flex: 1.1;
+    position: relative;
+    /* Ganti assets/hero.jpg dengan foto yayasan terbaikmu */
+    background: url('../assets/hero.jpg') center/cover no-repeat; 
+    background-color: #2b2b2b; /* Fallback */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Efek gelap transparan di atas foto supaya teks & logo emas terlihat kontras */
+.window-left .overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.85));
+    z-index: 1;
+}
+
+.left-content {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+}
+
+.logo-gold {
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 25px;
+    filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.5));
+}
+
+.quotes {
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: #f0f0f0;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 15px;
+    text-align: left;
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+/* ================= SISI KANAN (FORM INPUT) ================= */
+.window-right {
+    flex: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 40px;
+    background-color: var(--card-bg);
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 340px;
+}
+
+.right-header h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.right-header p {
+    font-size: 0.9rem;
+    color: #777777;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.form-group label i {
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #dddddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Wrapper Password agar ikon mata pas di kanan */
+.password-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-field input {
+    padding-right: 40px;
+}
+
+.password-field i {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    color: #999999;
+}
+
+/* Opsi bawah input */
+.auth-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+}
+
+.remember-me {
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.auth-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}
+
+/* Tombol Emas Premium */
+.btn-auth-gold {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary-gradient);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(229, 184, 35, 0.2);
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-auth-gold:hover {
+    opacity: 0.95;
+    transform: translateY(-1px);
+}
+
+.right-footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #777777;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+/* RESPONSIVE: Jika dibuka di HP, jadikan satu kolom bertumpuk */
+@media (max-width: 768px) {
+    .window-container {
+        flex-direction: column;
+        height: auto;
+    }
+    .window-left {
+        padding: 60px 20px 40px;
+    }
+    .quotes {
+        text-align: center;
+        border-left: none;
+        border-top: 2px solid var(--primary-color);
+        padding: 15px 0 0 0;
+    }
+    .window-right {
+        padding: 40px 20px;
+    }
+}

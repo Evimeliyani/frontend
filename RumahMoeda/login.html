@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - RumahMoeda</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <a href="index.html" class="floating-back"><i class="fas fa-arrow-left"></i> Kembali</a>
+
+    <div class="window-container">
+        
+        <div class="window-left">
+            <div class="overlay"></div>
+            <div class="left-content">
+                <img src="assets/logorumahmoeda.png" alt="Logo RumahMoeda" class="logo-gold">
+                <blockquote class="quotes">
+                    "Muda, Observatif, Enerjik, Dinamis, Aktif. Bersama menginspirasi dan membawa perubahan nyata bagi bangsa."
+                </blockquote>
+            </div>
+        </div>
+
+        <div class="window-right">
+            <div class="form-wrapper">
+                <div class="right-header">
+                    <h2>Selamat Datang</h2>
+                    <p>Silakan masuk untuk mengakses akun Anda</p>
+                </div>
+
+                <form id="loginForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="email" required placeholder="nama@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password"><i class="fas fa-lock"></i> Password</label>
+                        <div class="password-field">
+                            <input type="password" id="password" required placeholder="Masukkan password">
+                            <i class="fas fa-eye" id="togglePassword"></i>
+                        </div>
+                    </div>
+
+                    <div class="auth-options">
+                        <label class="remember-me">
+                            <input type="checkbox"> Ingat Saya
+                        </label>
+                        <a href="forgot-password.html" class="auth-link">Lupa Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-auth-gold">Masuk Aplikasi</button>
+                </form>
+
+                <div class="right-footer">
+                    <p>Belum bergabung? <a href="register.html" class="auth-link font-bold">Daftar Akun</a></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Jalur redirect ke admin dashboard
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Login Berhasil! Selamat bekerja.');
+            window.location.href = 'admin/dashboard.html'; 
+        });
+
+        // Fitur intip password
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+        togglePassword.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+</body>
+</html>

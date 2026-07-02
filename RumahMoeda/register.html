@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Akun - RumahMoeda</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="auth-container">
+        <div class="auth-header">
+            <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Kembali ke Home</a>
+            <h2>Buat Akun Baru</h2>
+            <p>Bergabunglah bersama Yayasan RumahMoeda</p>
+        </div>
+
+        <form id="registerForm" class="auth-form">
+            <div class="form-group">
+                <label for="nama"><i class="fas fa-user"></i> Nama Lengkap</label>
+                <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+            </div>
+            <div class="form-group">
+                <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                <input type="email" id="email" required placeholder="contoh@email.com">
+            </div>
+            <div class="form-group">
+                <label for="password"><i class="fas fa-lock"></i> Password</label>
+                <input type="password" id="password" required placeholder="Buat password minimal 6 karakter">
+            </div>
+            <div class="form-group">
+                <label for="confirm-password"><i class="fas fa-check-double"></i> Konfirmasi Password</label>
+                <input type="password" id="confirm-password" required placeholder="Ulangi password">
+            </div>
+            <div class="auth-options">
+                <label><input type="checkbox" required> Saya menyetujui Syarat & Ketentuan</label>
+            </div>
+            <button type="submit" class="btn-auth">Daftar</button>
+        </form>
+
+        <div class="auth-footer">
+            <p>Sudah punya akun? <a href="login.html" class="auth-link font-bold">Masuk di sini</a></p>
+        </div>
+    </div>
+
+    <script src="js/darkmode.js"></script>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const pwd = document.getElementById('password').value;
+            const confirmPwd = document.getElementById('confirm-password').value;
+
+            if(pwd !== confirmPwd) {
+                alert('Konfirmasi password tidak cocok!');
+                return;
+            }
+
+            alert('Pendaftaran Berhasil! Silakan masuk menggunakan akun baru Anda.');
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+.container-page {
+    padding: 40px 5%;
+}
+
+.profil-pendiri, .visi-misi-lengkap, .struktur-tree-section {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.pendiri-card {
+    background: var(--card-bg);
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.pendiri-card img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.role {
+    color: #ff7597;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* CSS Tree Layout untuk Struktur Organisasi */
+.tree ul {
+    padding-top: 20px; position: relative;
+    transition: all 0.5s;
+}
+.tree li {
+    float: left; text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+    transition: all 0.5s;
+}
+.tree li::before, .tree li::after{
+    content: '';
+    position: absolute; top: 0; right: 50%;
+    border-top: 2px solid #ccc;
+    width: 50%; height: 20px;
+}
+.tree li::after{
+    right: auto; left: 50%;
+    border-left: 2px solid #ccc;
+}
+.tree li:only-child::after, .tree li:only-child::before {
+    display: none;
+}
+.tree li:only-child{ padding-top: 0; }
+.tree li:first-child::before, .tree li:last-child::after{
+    border: 0 none;
+}
+.tree li:last-child::before{
+    border-right: 2px solid #ccc;
+    border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after{
+    border-radius: 5px 0 0 0;
+}
+.tree ul ul::before{
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    border-left: 2px solid #ccc;
+    width: 0; height: 20px;
+}
+.tree li a{
+    border: 2px solid #ccc;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--text-color);
+    background: var(--card-bg);
+    border-radius: 5px;
+    display: inline-block;
+}
